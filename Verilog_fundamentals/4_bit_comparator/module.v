@@ -1,4 +1,4 @@
-module comparator_4bit_dataflow (
+module comparator_4bit (
     input  [3:0] A,
     input  [3:0] B,
     output       A_gt_B,

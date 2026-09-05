@@ -1,0 +1,179 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "14.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000020201A41D20 .scope module, "tb_ripple_carry_adder" "tb_ripple_carry_adder" 2 3;
+ .timescale -9 -12;
+v0000020201A983F0_0 .var "A", 3 0;
+v0000020201A98AD0_0 .var "B", 3 0;
+v0000020201A96C30_0 .var "Cin", 0 0;
+v0000020201A97BD0_0 .net "Cout", 0 0, L_0000020201A32520;  1 drivers
+v0000020201A97630_0 .net "Sum", 3 0, L_0000020201A976D0;  1 drivers
+S_0000020201A42040 .scope module, "uut" "ripple_carry_adder" 2 11, 3 13 0, S_0000020201A41D20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /INPUT 1 "Cin";
+    .port_info 3 /OUTPUT 4 "Sum";
+    .port_info 4 /OUTPUT 1 "Cout";
+v0000020201A34BA0_0 .net "A", 3 0, v0000020201A983F0_0;  1 drivers
+v0000020201A34380_0 .net "B", 3 0, v0000020201A98AD0_0;  1 drivers
+v0000020201A344C0_0 .net "Cin", 0 0, v0000020201A96C30_0;  1 drivers
+v0000020201A34C40_0 .net "Cout", 0 0, L_0000020201A32520;  alias, 1 drivers
+v0000020201A34D80_0 .net "Sum", 3 0, L_0000020201A976D0;  alias, 1 drivers
+v0000020201A2E150_0 .net "c1", 0 0, L_0000020201A32360;  1 drivers
+v0000020201A2D750_0 .net "c2", 0 0, L_0000020201A326E0;  1 drivers
+v0000020201A2D9D0_0 .net "c3", 0 0, L_0000020201A32EC0;  1 drivers
+L_0000020201A98850 .part v0000020201A983F0_0, 0, 1;
+L_0000020201A988F0 .part v0000020201A98AD0_0, 0, 1;
+L_0000020201A96CD0 .part v0000020201A983F0_0, 1, 1;
+L_0000020201A98030 .part v0000020201A98AD0_0, 1, 1;
+L_0000020201A98A30 .part v0000020201A983F0_0, 2, 1;
+L_0000020201A97EF0 .part v0000020201A98AD0_0, 2, 1;
+L_0000020201A97C70 .part v0000020201A983F0_0, 3, 1;
+L_0000020201A98710 .part v0000020201A98AD0_0, 3, 1;
+L_0000020201A976D0 .concat8 [ 1 1 1 1], L_0000020201A331D0, L_0000020201A32D00, L_0000020201A323D0, L_0000020201A32AD0;
+S_0000020201A3C550 .scope module, "fa0" "full_adder" 3 22, 3 1 0, S_0000020201A42040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000020201A32BB0 .functor XOR 1, L_0000020201A98850, L_0000020201A988F0, C4<0>, C4<0>;
+L_0000020201A331D0 .functor XOR 1, L_0000020201A32BB0, v0000020201A96C30_0, C4<0>, C4<0>;
+L_0000020201A32910 .functor AND 1, L_0000020201A98850, L_0000020201A988F0, C4<1>, C4<1>;
+L_0000020201A328A0 .functor AND 1, L_0000020201A988F0, v0000020201A96C30_0, C4<1>, C4<1>;
+L_0000020201A32C20 .functor OR 1, L_0000020201A32910, L_0000020201A328A0, C4<0>, C4<0>;
+L_0000020201A32600 .functor AND 1, L_0000020201A98850, v0000020201A96C30_0, C4<1>, C4<1>;
+L_0000020201A32360 .functor OR 1, L_0000020201A32C20, L_0000020201A32600, C4<0>, C4<0>;
+v0000020201A35B40_0 .net *"_ivl_0", 0 0, L_0000020201A32BB0;  1 drivers
+v0000020201A355A0_0 .net *"_ivl_10", 0 0, L_0000020201A32600;  1 drivers
+v0000020201A34E20_0 .net *"_ivl_4", 0 0, L_0000020201A32910;  1 drivers
+v0000020201A35A00_0 .net *"_ivl_6", 0 0, L_0000020201A328A0;  1 drivers
+v0000020201A346A0_0 .net *"_ivl_8", 0 0, L_0000020201A32C20;  1 drivers
+v0000020201A350A0_0 .net "a", 0 0, L_0000020201A98850;  1 drivers
+v0000020201A35AA0_0 .net "b", 0 0, L_0000020201A988F0;  1 drivers
+v0000020201A347E0_0 .net "cin", 0 0, v0000020201A96C30_0;  alias, 1 drivers
+v0000020201A34EC0_0 .net "cout", 0 0, L_0000020201A32360;  alias, 1 drivers
+v0000020201A34420_0 .net "sum", 0 0, L_0000020201A331D0;  1 drivers
+S_0000020201A3C6E0 .scope module, "fa1" "full_adder" 3 23, 3 1 0, S_0000020201A42040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000020201A32DE0 .functor XOR 1, L_0000020201A96CD0, L_0000020201A98030, C4<0>, C4<0>;
+L_0000020201A32D00 .functor XOR 1, L_0000020201A32DE0, L_0000020201A32360, C4<0>, C4<0>;
+L_0000020201A32670 .functor AND 1, L_0000020201A96CD0, L_0000020201A98030, C4<1>, C4<1>;
+L_0000020201A32980 .functor AND 1, L_0000020201A98030, L_0000020201A32360, C4<1>, C4<1>;
+L_0000020201A32E50 .functor OR 1, L_0000020201A32670, L_0000020201A32980, C4<0>, C4<0>;
+L_0000020201A33240 .functor AND 1, L_0000020201A96CD0, L_0000020201A32360, C4<1>, C4<1>;
+L_0000020201A326E0 .functor OR 1, L_0000020201A32E50, L_0000020201A33240, C4<0>, C4<0>;
+v0000020201A35FA0_0 .net *"_ivl_0", 0 0, L_0000020201A32DE0;  1 drivers
+v0000020201A356E0_0 .net *"_ivl_10", 0 0, L_0000020201A33240;  1 drivers
+v0000020201A34CE0_0 .net *"_ivl_4", 0 0, L_0000020201A32670;  1 drivers
+v0000020201A35BE0_0 .net *"_ivl_6", 0 0, L_0000020201A32980;  1 drivers
+v0000020201A35000_0 .net *"_ivl_8", 0 0, L_0000020201A32E50;  1 drivers
+v0000020201A35140_0 .net "a", 0 0, L_0000020201A96CD0;  1 drivers
+v0000020201A35C80_0 .net "b", 0 0, L_0000020201A98030;  1 drivers
+v0000020201A35320_0 .net "cin", 0 0, L_0000020201A32360;  alias, 1 drivers
+v0000020201A34880_0 .net "cout", 0 0, L_0000020201A326E0;  alias, 1 drivers
+v0000020201A35640_0 .net "sum", 0 0, L_0000020201A32D00;  1 drivers
+S_0000020201A3C870 .scope module, "fa2" "full_adder" 3 24, 3 1 0, S_0000020201A42040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000020201A33010 .functor XOR 1, L_0000020201A98A30, L_0000020201A97EF0, C4<0>, C4<0>;
+L_0000020201A323D0 .functor XOR 1, L_0000020201A33010, L_0000020201A326E0, C4<0>, C4<0>;
+L_0000020201A32590 .functor AND 1, L_0000020201A98A30, L_0000020201A97EF0, C4<1>, C4<1>;
+L_0000020201A32F30 .functor AND 1, L_0000020201A97EF0, L_0000020201A326E0, C4<1>, C4<1>;
+L_0000020201A329F0 .functor OR 1, L_0000020201A32590, L_0000020201A32F30, C4<0>, C4<0>;
+L_0000020201A32D70 .functor AND 1, L_0000020201A98A30, L_0000020201A326E0, C4<1>, C4<1>;
+L_0000020201A32EC0 .functor OR 1, L_0000020201A329F0, L_0000020201A32D70, C4<0>, C4<0>;
+v0000020201A353C0_0 .net *"_ivl_0", 0 0, L_0000020201A33010;  1 drivers
+v0000020201A35780_0 .net *"_ivl_10", 0 0, L_0000020201A32D70;  1 drivers
+v0000020201A35960_0 .net *"_ivl_4", 0 0, L_0000020201A32590;  1 drivers
+v0000020201A35460_0 .net *"_ivl_6", 0 0, L_0000020201A32F30;  1 drivers
+v0000020201A351E0_0 .net *"_ivl_8", 0 0, L_0000020201A329F0;  1 drivers
+v0000020201A36040_0 .net "a", 0 0, L_0000020201A98A30;  1 drivers
+v0000020201A35280_0 .net "b", 0 0, L_0000020201A97EF0;  1 drivers
+v0000020201A35D20_0 .net "cin", 0 0, L_0000020201A326E0;  alias, 1 drivers
+v0000020201A35DC0_0 .net "cout", 0 0, L_0000020201A32EC0;  alias, 1 drivers
+v0000020201A35E60_0 .net "sum", 0 0, L_0000020201A323D0;  1 drivers
+S_00000202019FC540 .scope module, "fa3" "full_adder" 3 25, 3 1 0, S_0000020201A42040;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "cout";
+L_0000020201A32440 .functor XOR 1, L_0000020201A97C70, L_0000020201A98710, C4<0>, C4<0>;
+L_0000020201A32AD0 .functor XOR 1, L_0000020201A32440, L_0000020201A32EC0, C4<0>, C4<0>;
+L_0000020201A33160 .functor AND 1, L_0000020201A97C70, L_0000020201A98710, C4<1>, C4<1>;
+L_0000020201A327C0 .functor AND 1, L_0000020201A98710, L_0000020201A32EC0, C4<1>, C4<1>;
+L_0000020201A324B0 .functor OR 1, L_0000020201A33160, L_0000020201A327C0, C4<0>, C4<0>;
+L_0000020201A32830 .functor AND 1, L_0000020201A97C70, L_0000020201A32EC0, C4<1>, C4<1>;
+L_0000020201A32520 .functor OR 1, L_0000020201A324B0, L_0000020201A32830, C4<0>, C4<0>;
+v0000020201A34920_0 .net *"_ivl_0", 0 0, L_0000020201A32440;  1 drivers
+v0000020201A34600_0 .net *"_ivl_10", 0 0, L_0000020201A32830;  1 drivers
+v0000020201A35F00_0 .net *"_ivl_4", 0 0, L_0000020201A33160;  1 drivers
+v0000020201A360E0_0 .net *"_ivl_6", 0 0, L_0000020201A327C0;  1 drivers
+v0000020201A36180_0 .net *"_ivl_8", 0 0, L_0000020201A324B0;  1 drivers
+v0000020201A349C0_0 .net "a", 0 0, L_0000020201A97C70;  1 drivers
+v0000020201A34740_0 .net "b", 0 0, L_0000020201A98710;  1 drivers
+v0000020201A36220_0 .net "cin", 0 0, L_0000020201A32EC0;  alias, 1 drivers
+v0000020201A34A60_0 .net "cout", 0 0, L_0000020201A32520;  alias, 1 drivers
+v0000020201A34B00_0 .net "sum", 0 0, L_0000020201A32AD0;  1 drivers
+    .scope S_0000020201A41D20;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "rca_dump.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000020201A41D20 {0 0 0};
+    %vpi_call 2 24 "$display", "Time\011 A \011 B \011Cin \011 Sum \011Cout" {0 0 0};
+    %vpi_call 2 25 "$monitor", "%0dt\011 %b\011 %b\011 %b \011 %b\011 %b", $time, v0000020201A983F0_0, v0000020201A98AD0_0, v0000020201A96C30_0, v0000020201A97630_0, v0000020201A97BD0_0 {0 0 0};
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000020201A983F0_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000020201A98AD0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020201A96C30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0000020201A983F0_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0000020201A98AD0_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020201A96C30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0000020201A983F0_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0000020201A98AD0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000020201A96C30_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000020201A983F0_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000020201A98AD0_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000020201A96C30_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 39 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "module.v";

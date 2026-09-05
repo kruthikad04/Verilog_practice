@@ -1,0 +1,103 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "14.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002E9091B8B50 .scope module, "tb_demux_1_4" "tb_demux_1_4" 2 3;
+ .timescale -9 -12;
+v000002E90920A330_0 .var "din", 0 0;
+v000002E90920B550_0 .var "sel", 1 0;
+v000002E90920AD30_0 .net "y0", 0 0, L_000002E9091A7640;  1 drivers
+v000002E90920B690_0 .net "y1", 0 0, L_000002E9091A76B0;  1 drivers
+v000002E90920B190_0 .net "y2", 0 0, L_000002E9091A74F0;  1 drivers
+v000002E90920B230_0 .net "y3", 0 0, L_000002E9091A7560;  1 drivers
+S_000002E9091B8CE0 .scope module, "uut" "demux_1_4_dataflow" 2 13, 3 1 0, S_000002E9091B8B50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "din";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 1 "y0";
+    .port_info 3 /OUTPUT 1 "y1";
+    .port_info 4 /OUTPUT 1 "y2";
+    .port_info 5 /OUTPUT 1 "y3";
+L_000002E9091A75D0 .functor NOT 1, L_000002E90920ADD0, C4<0>, C4<0>, C4<0>;
+L_000002E9091A7480 .functor AND 1, v000002E90920A330_0, L_000002E9091A75D0, C4<1>, C4<1>;
+L_000002E9091A73A0 .functor NOT 1, L_000002E90920BB90, C4<0>, C4<0>, C4<0>;
+L_000002E9091A7640 .functor AND 1, L_000002E9091A7480, L_000002E9091A73A0, C4<1>, C4<1>;
+L_000002E9091A7950 .functor NOT 1, L_000002E90920A3D0, C4<0>, C4<0>, C4<0>;
+L_000002E9091A7410 .functor AND 1, v000002E90920A330_0, L_000002E9091A7950, C4<1>, C4<1>;
+L_000002E9091A76B0 .functor AND 1, L_000002E9091A7410, L_000002E90920AE70, C4<1>, C4<1>;
+L_000002E9091A7250 .functor AND 1, v000002E90920A330_0, L_000002E90920BAF0, C4<1>, C4<1>;
+L_000002E9091A72C0 .functor NOT 1, L_000002E90920A0B0, C4<0>, C4<0>, C4<0>;
+L_000002E9091A74F0 .functor AND 1, L_000002E9091A7250, L_000002E9091A72C0, C4<1>, C4<1>;
+L_000002E9091A7790 .functor AND 1, v000002E90920A330_0, L_000002E90920BF50, C4<1>, C4<1>;
+L_000002E9091A7560 .functor AND 1, L_000002E9091A7790, L_000002E90920A830, C4<1>, C4<1>;
+v000002E9091A4D10_0 .net *"_ivl_1", 0 0, L_000002E90920ADD0;  1 drivers
+v000002E9091A44F0_0 .net *"_ivl_13", 0 0, L_000002E90920A3D0;  1 drivers
+v000002E9091A4DB0_0 .net *"_ivl_14", 0 0, L_000002E9091A7950;  1 drivers
+v000002E9091A4BD0_0 .net *"_ivl_16", 0 0, L_000002E9091A7410;  1 drivers
+v000002E9091A4810_0 .net *"_ivl_19", 0 0, L_000002E90920AE70;  1 drivers
+v000002E9091A5030_0 .net *"_ivl_2", 0 0, L_000002E9091A75D0;  1 drivers
+v000002E9091A50D0_0 .net *"_ivl_23", 0 0, L_000002E90920BAF0;  1 drivers
+v000002E9091A5210_0 .net *"_ivl_24", 0 0, L_000002E9091A7250;  1 drivers
+v000002E9091A4950_0 .net *"_ivl_27", 0 0, L_000002E90920A0B0;  1 drivers
+v000002E9091A52B0_0 .net *"_ivl_28", 0 0, L_000002E9091A72C0;  1 drivers
+v000002E9091A5350_0 .net *"_ivl_33", 0 0, L_000002E90920BF50;  1 drivers
+v000002E90920B0F0_0 .net *"_ivl_34", 0 0, L_000002E9091A7790;  1 drivers
+v000002E90920ABF0_0 .net *"_ivl_37", 0 0, L_000002E90920A830;  1 drivers
+v000002E90920B2D0_0 .net *"_ivl_4", 0 0, L_000002E9091A7480;  1 drivers
+v000002E90920BCD0_0 .net *"_ivl_7", 0 0, L_000002E90920BB90;  1 drivers
+v000002E90920AC90_0 .net *"_ivl_8", 0 0, L_000002E9091A73A0;  1 drivers
+v000002E90920A5B0_0 .net "din", 0 0, v000002E90920A330_0;  1 drivers
+v000002E90920BE10_0 .net "sel", 1 0, v000002E90920B550_0;  1 drivers
+v000002E90920B410_0 .net "y0", 0 0, L_000002E9091A7640;  alias, 1 drivers
+v000002E90920B050_0 .net "y1", 0 0, L_000002E9091A76B0;  alias, 1 drivers
+v000002E90920B7D0_0 .net "y2", 0 0, L_000002E9091A74F0;  alias, 1 drivers
+v000002E90920BEB0_0 .net "y3", 0 0, L_000002E9091A7560;  alias, 1 drivers
+L_000002E90920ADD0 .part v000002E90920B550_0, 1, 1;
+L_000002E90920BB90 .part v000002E90920B550_0, 0, 1;
+L_000002E90920A3D0 .part v000002E90920B550_0, 1, 1;
+L_000002E90920AE70 .part v000002E90920B550_0, 0, 1;
+L_000002E90920BAF0 .part v000002E90920B550_0, 1, 1;
+L_000002E90920A0B0 .part v000002E90920B550_0, 0, 1;
+L_000002E90920BF50 .part v000002E90920B550_0, 1, 1;
+L_000002E90920A830 .part v000002E90920B550_0, 0, 1;
+    .scope S_000002E9091B8B50;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_000002E9091B8B50 {0 0 0};
+    %vpi_call 2 21 "$monitor", "Time=%0dt | din=%b sel=%b | y3 y2 y1 y0 = %b %b %b %b", $time, v000002E90920A330_0, v000002E90920B550_0, v000002E90920B230_0, v000002E90920B190_0, v000002E90920B690_0, v000002E90920AD30_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000002E90920A330_0, 0, 1;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000002E90920A330_0, 0, 1;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002E90920B550_0, 0, 2;
+    %delay 10000, 0;
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "module.v";

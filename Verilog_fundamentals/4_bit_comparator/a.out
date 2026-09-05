@@ -1,0 +1,88 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "14.0 (devel)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000018ED1838FD0 .scope module, "comparator_4bit_tb" "comparator_4bit_tb" 2 3;
+ .timescale -9 -12;
+v0000018ED183C610_0 .var "A", 3 0;
+v0000018ED183C2F0_0 .net "A_eq_B", 0 0, L_0000018ED183C430;  1 drivers
+v0000018ED183BC10_0 .net "A_gt_B", 0 0, L_0000018ED183C250;  1 drivers
+v0000018ED183B850_0 .net "A_lt_B", 0 0, L_0000018ED183BB70;  1 drivers
+v0000018ED183B8F0_0 .var "B", 3 0;
+S_0000018ED1839160 .scope module, "uut" "comparator_4bit" 2 15, 3 1 0, S_0000018ED1838FD0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /INPUT 4 "B";
+    .port_info 2 /OUTPUT 1 "A_gt_B";
+    .port_info 3 /OUTPUT 1 "A_lt_B";
+    .port_info 4 /OUTPUT 1 "A_eq_B";
+v0000018ED183BA30_0 .net "A", 3 0, v0000018ED183C610_0;  1 drivers
+v0000018ED183BAD0_0 .net "A_eq_B", 0 0, L_0000018ED183C430;  alias, 1 drivers
+v0000018ED183BD50_0 .net "A_gt_B", 0 0, L_0000018ED183C250;  alias, 1 drivers
+v0000018ED183C4D0_0 .net "A_lt_B", 0 0, L_0000018ED183BB70;  alias, 1 drivers
+v0000018ED183BF30_0 .net "B", 3 0, v0000018ED183B8F0_0;  1 drivers
+v0000018ED183BE90_0 .net *"_ivl_0", 0 0, L_0000018ED183B990;  1 drivers
+L_0000018ED1AD0118 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0000018ED183BDF0_0 .net/2u *"_ivl_10", 0 0, L_0000018ED1AD0118;  1 drivers
+L_0000018ED1AD0160 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000018ED183BCB0_0 .net/2u *"_ivl_12", 0 0, L_0000018ED1AD0160;  1 drivers
+v0000018ED183BFD0_0 .net *"_ivl_16", 0 0, L_0000018ED183C390;  1 drivers
+L_0000018ED1AD01A8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0000018ED183C070_0 .net/2u *"_ivl_18", 0 0, L_0000018ED1AD01A8;  1 drivers
+L_0000018ED1AD0088 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0000018ED183B7B0_0 .net/2u *"_ivl_2", 0 0, L_0000018ED1AD0088;  1 drivers
+L_0000018ED1AD01F0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000018ED183C6B0_0 .net/2u *"_ivl_20", 0 0, L_0000018ED1AD01F0;  1 drivers
+L_0000018ED1AD00D0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000018ED183C570_0 .net/2u *"_ivl_4", 0 0, L_0000018ED1AD00D0;  1 drivers
+v0000018ED183C110_0 .net *"_ivl_8", 0 0, L_0000018ED183C1B0;  1 drivers
+L_0000018ED183B990 .cmp/gt 4, v0000018ED183C610_0, v0000018ED183B8F0_0;
+L_0000018ED183C250 .functor MUXZ 1, L_0000018ED1AD00D0, L_0000018ED1AD0088, L_0000018ED183B990, C4<>;
+L_0000018ED183C1B0 .cmp/gt 4, v0000018ED183B8F0_0, v0000018ED183C610_0;
+L_0000018ED183BB70 .functor MUXZ 1, L_0000018ED1AD0160, L_0000018ED1AD0118, L_0000018ED183C1B0, C4<>;
+L_0000018ED183C390 .cmp/eq 4, v0000018ED183C610_0, v0000018ED183B8F0_0;
+L_0000018ED183C430 .functor MUXZ 1, L_0000018ED1AD01F0, L_0000018ED1AD01A8, L_0000018ED183C390, C4<>;
+    .scope S_0000018ED1838FD0;
+T_0 ;
+    %vpi_call 2 25 "$dumpfile", "comparator_simulation.vcd" {0 0 0};
+    %vpi_call 2 26 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000018ED1838FD0 {0 0 0};
+    %vpi_call 2 29 "$monitor", "Time = %0t ns | A = %d, B = %d | Greater = %b, Equal = %b, Less = %b", $time, v0000018ED183C610_0, v0000018ED183B8F0_0, v0000018ED183BC10_0, v0000018ED183C2F0_0, v0000018ED183B850_0 {0 0 0};
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000018ED183C610_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000018ED183B8F0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 12, 0, 4;
+    %store/vec4 v0000018ED183C610_0, 0, 4;
+    %pushi/vec4 4, 0, 4;
+    %store/vec4 v0000018ED183B8F0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 4;
+    %store/vec4 v0000018ED183C610_0, 0, 4;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0000018ED183B8F0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000018ED183C610_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000018ED183B8F0_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0000018ED183C610_0, 0, 4;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0000018ED183B8F0_0, 0, 4;
+    %delay 10000, 0;
+    %vpi_call 2 48 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "module.v";

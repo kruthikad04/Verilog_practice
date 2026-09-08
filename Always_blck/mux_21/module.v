@@ -1,10 +1,15 @@
-module mux2to1 (input in0, in1, sel,output reg  out);
+module mux2x1 (
+    input  wire a,
+    input  wire b,
+    input  wire sel,
+    output reg  y
+);
+
     always @(*) begin
-        if (sel) begin
-            out = in1;
-        end else begin
-            out = in0;
-        end
+        if (sel == 1'b0)
+            y = a;
+        else
+            y = b;
     end
 
 endmodule
